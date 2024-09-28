@@ -1,0 +1,7 @@
+commandlineargs.sh
+displayoutputs.sh
+files.txt
+firstscript.sh
+output.txt
+read.txt
+secondscript.sh
