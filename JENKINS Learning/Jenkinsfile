@@ -1,0 +1,35 @@
+//common workflow
+stages {
+    stage('Clone'){ //pulling down the code from a git repository and setting up the local environment on the agent
+        steps{
+         git branch : master
+         url : 'https://github.com/devopsjourney1/helloworld.git'
+        }
+    }
+    stage('Build'){
+        steps{//takes the code and builds it which usually means generating some sort of local artifact on the code 
+        sh ```
+        docker build -t myawesomeapp:$[BUILD_NUMBER]
+        ```
+        }
+    }
+    stage('Test'){ //runs test against the newly built code
+        steps{
+            sh```
+            docker run -it myawesomeapp:$[BUILD_NUMBER]
+            curl localhost:5000
+            ```
+        }
+    }
+    stage('Package'){//it get packaged up so it's ready for deployment
+        steps{
+            sh ```
+            docker push devopsjourney1/myawesomeapp:$[BUILD_NUMBER]
+        }
+    }
+    stage('Deploy'){//sending out a newly built docker image to a docker hub
+        steps{
+         
+        }
+    }
+}
