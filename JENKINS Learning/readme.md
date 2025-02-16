@@ -297,9 +297,9 @@ docker rmi jenkins/jenkins:2.414.2
 We should get something like this 
 
 ```docker
-Untagged: jenkins/jenkins:2.414.2
-Untagged: jenkins/jenkins@sha256:b705323eaf70a7da4c1eed8b816f33dff2d5c8c3671170a2c17cf77aa4f15432
-Deleted: sha256:3d0d48f61941fc7cb5253b07efd932d06ee6e335445f6f535ac3d1d49e385a7e
+Untagged: 
+Untagged:
+Deleted: 
 ```
 
 Okay quick this before we proceed further incase you want to stop learning today and continue tommorow 
